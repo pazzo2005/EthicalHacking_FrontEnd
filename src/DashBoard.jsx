@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useAuth } from "./AuthContext";
 
 import "./DashBoard.css";
 export default function Dashboard() {
+  const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("Dashboard");
 
   const labs = [
@@ -80,8 +82,8 @@ export default function Dashboard() {
           <div className="user-menu">
             <div className="user-avatar">U</div>
             <div>
-              <strong>Lab User</strong>
-              <p>Security Learner</p>
+              <strong>{user?.username || "Lab User"}</strong>
+              <p>{user?.email || "Security Learner"}</p>
             </div>
           </div>
         </header>
