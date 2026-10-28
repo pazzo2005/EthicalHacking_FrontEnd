@@ -13,7 +13,7 @@ let lastLoggedPage = "";
 function ActivityTracker() {
   const location = useLocation();
 
-  useEffect(() => {
+  useEffect(() => { 
     const page = location.pathname;
     if (page !== lastLoggedPage) {
       lastLoggedPage = page;
